@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { RichTextEditor } from "@/components/rich-text-editor";
 
 export default function HomePage() {
   const [content, setContent] = useState("");
@@ -82,13 +82,10 @@ export default function HomePage() {
               <Label htmlFor="content" className="text-base font-semibold">
                 Paste Content
               </Label>
-              <Textarea
-                id="content"
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                placeholder="Enter your text here..."
-                className="min-h-[200px] resize-y font-mono text-sm"
-                required
+              <RichTextEditor
+                content={content}
+                onChange={setContent}
+                placeholder="Enter your text here... Use the toolbar to format!"
               />
             </div>
 

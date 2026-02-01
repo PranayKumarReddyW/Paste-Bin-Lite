@@ -47,10 +47,11 @@ export default async function PastePage({
               </div>
             </div>
 
-            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-              <pre className="whitespace-pre-wrap break-words font-mono text-sm text-slate-800">
-                {paste.content}
-              </pre>
+            <div className="bg-white rounded-lg p-6 border border-slate-200">
+              <div
+                className="ProseMirror"
+                dangerouslySetInnerHTML={{ __html: paste.content }}
+              />
             </div>
           </div>
         </Card>
